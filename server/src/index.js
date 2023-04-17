@@ -1,15 +1,23 @@
-const app = require('express')();
-const homeRouter = require('./routers/homeRouter')
+const express = require('express');
+const userRouter = require('./routers/userRouter')
+const adminRouter = require('./routers/adminRouter')
+const bookRouter = require('./routers/bookRouter')
 const appsettings = require('./config/appsettings');
 const dbConfig = require('./config/dbConfig');
+const auth = require('./middlewares/auth');
 
 
 async function startUp() {
     //Connect and seed database
     await dbConfig();
-    
 
-    app.use('/',homeRouter)
+    const app = express();
+
+    app.use(express.json())
+    app.use(auth)
+    app.use('/user', userRouter)
+    app.use('/book', bookRouter)
+    app.use('/admin', adminRouter)
     app.listen(appsettings.PORT, () => { console.log(`Server listen on port ${appsettings.PORT}...`) })
 }
 startUp();

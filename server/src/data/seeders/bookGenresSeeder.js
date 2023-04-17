@@ -1,13 +1,16 @@
 const BookGenre = require("../models/BookGenre");
 
-async function BookGenresSeed(){
-   
-    if(await BookGenre.find().length<=0){
-       await BookGenre.create({
-        bookGenre:"Test",
-       })
-    }
+async function bookGenresSeed() {
+       const bookGenres = ['Dystopian', 'Mystery', 'Horror', 'Thriller', 'Paranormal', 'Historical fiction', 'Science Fiction', 'Children'];
 
+       if ((await BookGenre.find()).length <= 0) {
+              bookGenres.forEach(x => {
+                     const bookGenre = new BookGenre({
+                            bookGenre: x,
+                     })
+                     bookGenre.save();
+              })
+       }
 }
 
-module.exports = BookGenresSeed;
+module.exports = bookGenresSeed;
