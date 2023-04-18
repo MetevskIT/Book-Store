@@ -1,0 +1,25 @@
+.user-nav {
+    display: flex;
+    justify-content: end;
+    padding: 0.2rem 10% 0.2rem 0;
+    background-color: #93cbe2;
+}
+
+.user-nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    gap: 1.2rem;
+}
+
+.user-nav ul li {
+    list-style-type: none;
+}
+
+.user-nav ul li a {
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    color: rgba(255, 255, 255, 0.993);
+}
