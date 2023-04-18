@@ -40,35 +40,48 @@ async function login(email, password) {
     return createSession(user)
 }
 
-async function findUserByIdAsync(id){
+async function findUserByIdAsync(id) {
     const user = await User.findById(id)
     if (!user) {
         throw new Error("User dont exist!");
     }
+    return user;
 }
 
-async function addToCart(){
+async function addToCart(userId, bookId) {
 
+    try {
+        const user = await findUserByIdAsync(userId);
+        if (!user.cart.includes(bookId)) {
+            await user.cart.push(bookId)
+            user.save();
+        }
+    } catch (error) {
+        return error;
+    }
 }
 
-async function removeFromCart(){
-    
+async function removeFromCart(userId, bookId) {
+
+    try {
+        const user = await findUserByIdAsync(userId);
+
+        if (user.cart.includes(bookId)) {
+            await user.cart.splice(user.cart.indexOf(bookId), 1)
+            await user.save();
+        }
+    } catch (error) {
+        return error;
+    }
 }
 
-async function getBookFromCart(){
-    
-}
-
-async function addToFavorite(){
-
-}
-
-async function removeFromFavorite(){
-    
-}
-
-async function getBookFromFavorite(){
-    
+async function getBookFromCart(userId) {
+    try {
+        const books = User.findById(userId).populate('cart').select('cart')
+        return books;
+    } catch (error) {
+        return error;
+    }
 }
 
 async function logout() {
@@ -83,7 +96,7 @@ function createSession(user) {
     }
 
     const accessToken = jwt.sign(payload, JWT_SECRET_KEY, {
-        //expiresIn: "40h"
+        expiresIn: "1h"
     })
 
     return {
@@ -94,14 +107,14 @@ function createSession(user) {
 }
 
 function validateToken(token) {
-
     return jwt.verify(token, JWT_SECRET_KEY)
-
-
 }
 module.exports = {
     register,
     login,
     validateToken,
-    findUserByIdAsync
+    findUserByIdAsync,
+    addToCart,
+    removeFromCart,
+    getBookFromCart,
 }

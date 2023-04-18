@@ -11,10 +11,6 @@ const userSchema = new Schema({
         type: String,
         required: [true, "Password is required!"],
     },
-    favoriteBooks: [{
-        type: Types.ObjectId,
-        ref: "Book"
-    }],
     cart: [{
         type: Types.ObjectId,
         ref: "Book"

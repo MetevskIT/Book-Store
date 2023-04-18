@@ -1,6 +1,7 @@
 const express = require('express');
 const userRouter = require('./routers/userRouter')
 const adminRouter = require('./routers/adminRouter')
+const orderRouter = require('./routers/orderRouter')
 const bookRouter = require('./routers/bookRouter')
 const appsettings = require('./config/appsettings');
 const dbConfig = require('./config/dbConfig');
@@ -18,6 +19,7 @@ async function startUp() {
     app.use('/user', userRouter)
     app.use('/book', bookRouter)
     app.use('/admin', adminRouter)
+    app.use('/order',orderRouter)
     app.listen(appsettings.PORT, () => { console.log(`Server listen on port ${appsettings.PORT}...`) })
 }
 startUp();

@@ -1,4 +1,5 @@
-const Book = require('../data/models/Book')
+const Book = require('../data/models/Book');
+const Order = require('../data/models/Order');
 
 async function createBook(model) {
     try {
@@ -32,12 +33,19 @@ async function editBook(bookId, model) {
     }
 }
 
-async function deleteBook(bookId){
+async function deleteBook(bookId) {
     return await Book.findByIdAndDelete(bookId)
+}
+async function changeOrderStatus(orderId, statusId) {
+    const order = await Order.findByIdAndUpdate(orderId, {
+        status: statusId
+    })
+    return order;
 }
 
 module.exports = {
     createBook,
     editBook,
-    deleteBook
+    deleteBook,
+    changeOrderStatus
 }

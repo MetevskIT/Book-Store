@@ -34,7 +34,15 @@ async function deleteBook(req, res) {
 }
 
 async function manageOrder(req, res) {
+    try {
+        const orderId = req.params.id;
+        const statusId = req.body.statusId;
+        const order = await adminService.changeOrderStatus(orderId, statusId);
 
+        res.status(200).json(order)
+    } catch (error) {
+        res.status(404).json({ message: "Book is not exist!" })
+    }
 }
 
 
