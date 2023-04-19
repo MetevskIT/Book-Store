@@ -1,0 +1,22 @@
+.newest-books {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.newest-books h1{
+    font-size: 40px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.books a {
+    text-decoration: none;
+    display: inline;
+}
+
+.books {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}

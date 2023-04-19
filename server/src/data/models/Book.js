@@ -9,11 +9,10 @@ const bookSchema = new Schema({
    },
    price: {
       type: String,
-      required: [true, "Price is required!"],
+
    },
    description: {
       type: String,
-      required: [true, "Description is required!"],
    },
    genre: {
       type: Types.ObjectId,
@@ -23,9 +22,9 @@ const bookSchema = new Schema({
       type: Date,
       default: Date.now()
    },
-   imageUrls: [{
+   imageUrls: {
       type: String
-   }]
+   }
 
 })
 

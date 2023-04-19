@@ -1,0 +1,38 @@
+.formData{
+    text-align: center;
+}
+form{
+    display: inline-flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 6rem 3rem 6rem 3rem;
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+    border-radius: 2rem;
+}
+
+form input[type='text']{
+    width: 20rem;
+    height: 2rem;
+    border-radius:1rem ;
+    border-color: #368cbb;
+}
+form input[type='submit']{
+    width: 20rem;
+    height: 2rem;
+    border: 0cm;
+    background-color: #93cbe2;
+    border-radius: 1rem;
+    color: white;
+    font-size: 18px;
+}
+
+form label{
+    font-size: 20px;
+}
+form a{
+    padding-top: 2.5rem;
+    text-decoration: none;
+    color: #368cbb;
+}
+

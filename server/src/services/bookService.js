@@ -13,7 +13,7 @@ async function getBookById(id) {
     return await Book.findById(id);
 }
 async function getLastThenBooks(){
-    return await Book.find().sort({createdOn:1}).limit(10);
+    return await Book.find().sort({createdOn:-1}).limit(7);
 }
 
 async function getBooksByGenres(genreId){

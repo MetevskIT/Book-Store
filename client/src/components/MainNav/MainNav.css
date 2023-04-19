@@ -1,0 +1,35 @@
+.main-nav {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    gap: 4rem;
+    padding: 0.8rem 0 0.8rem 10rem;
+    border-bottom: 0.1rem solid silver;
+}
+
+.nav-title {
+    color: #368cbb;
+    font-weight: 700;
+    margin: 0px;
+    border-radius: 5px;
+    padding: 0.2rem;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    gap: 1.2rem;
+}
+
+.main-nav ul li {
+    list-style-type: none;
+}
+
+.main-nav ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-flex;
+    color: rgba(0, 0, 0, 0.993);
+}

@@ -8,9 +8,9 @@ async function createBook(model) {
             price: model.price,
             description: model.description,
             genre: model.genre,
-            imageUrls: model.imageUrls,
+            imageUrls: model.imageUrl,
         });
-
+        console.log(model);
         book.save();
         return book;
     } catch (error) {

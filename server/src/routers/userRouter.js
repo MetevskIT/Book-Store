@@ -6,8 +6,8 @@ const { isLogged } = require('../middlewares/guard')
 router.post('/register', userController.register)
 router.post('/login', userController.login)
 router.get('/logout', userController.logout)
-router.post('/addToCart/:id', isLogged, userController.addToCart)
-router.post('/removeFromCart/:id', isLogged, userController.removeFromCart)
-router.get('/getBooksFromCart', isLogged, userController.getBooksFromCart)
+router.get('/addToCart/:id', userController.addToCart)
+router.get('/removeFromCart/:id', userController.removeFromCart)
+router.get('/getBooksFromCart', userController.getBooksFromCart)
 
 module.exports = router;

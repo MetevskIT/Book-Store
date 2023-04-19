@@ -20,6 +20,7 @@ async function getGenres(req,res){
 }
 
 async function getLastThenBooks(req,res){
+    console.log("asd");
     const books = await bookService.getLastThenBooks();
     res.status(200).json(books)
 }
