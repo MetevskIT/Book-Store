@@ -17,7 +17,7 @@ const Cart = ()=>{
         <div className="newest-books">
         <h1 className="newest-books-title">Cart</h1>
         <section className="books">
-            {books?.length>0?books.map(x => <Book key={x._id} id={x._id} title={x.title} description={x.description} price={x.price} imageUrl={x.imageUrls[0]} />):<p>No items!</p>}
+            {books?.length>0?books.map(x => <Book key={x._id} id={x._id} title={x.title} description={x.description} price={x.price} imageUrl={x.imageUrl} />):<p>No items!</p>}
         </section>
         </div>
     )

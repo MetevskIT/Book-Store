@@ -10,7 +10,6 @@ const Home = () => {
     useEffect(() => {
         bookService.getLastThenBooks()
             .then(result => {
-                console.log(result);
                 setBooks(result)
             })
     }, [])
@@ -24,7 +23,7 @@ const Home = () => {
                 <section className="books">
                     {books.length>0?
                     books.map(x => 
-                        <Book key={x._id} id={x._id} title={x.title} description={x.description} price={x.price} imageUrl={x.imageUrls} details={true} />
+                        <Book key={x._id} id={x._id} title={x.title} description={x.description} price={x.price} imageUrl={x.imageUrl} details={true} />
                         
                     ):<p>No books</p>}
                 </section>

@@ -40,6 +40,16 @@ async function addToCart(req, res) {
     }
 }
 
+async function checkRole(req, res) {
+    try {
+        const userId = req.params.id;
+        const userRole = await userService.checkRole(userId)
+        res.status(200).json(userRole)
+    } catch (error) {
+        return res.status(400).json({ "message": error.message })
+    }
+}
+
 async function removeFromCart(req, res) {
     try {
         const userId = req.user._id;
@@ -68,5 +78,6 @@ module.exports = {
     addToCart,
     removeFromCart,
     getBooksFromCart,
+    checkRole
 
 };

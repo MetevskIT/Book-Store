@@ -1,20 +1,27 @@
-
-.categories{
+.categories {
     display: flex;
     gap: 5rem;
     margin: 3rem 10rem 3rem 10rem;
 }
-.category{
+
+.category {
     text-align: center;
     background-color: #93cbe2;
     border-radius: 0.5rem;
     width: 10rem;
 }
-.info{
+
+.info {
     color: white;
     font-size: 20px;
 }
-.categories a{
+
+.categories a {
     text-decoration: none;
-    
+
+}
+
+.bnrCover {
+    width: 100%;
+
 }

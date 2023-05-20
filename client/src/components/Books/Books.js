@@ -20,7 +20,7 @@ const Books = () => {
         <div className="newest-books">
         <h1 className="newest-books-title">Books</h1>
         <section className="books">
-            {books.map(x => <Book key={x._id} id={x._id} title={x.title} description={x.description} price={x.price} imageUrl={x.imageUrls[0]} details={true} />)}
+            {books.map(x => <Book key={x._id} id={x._id} title={x.title} description={x.description} price={x.price} imageUrl={x.imageUrl} details={true} />)}
         </section>
         </div>
     )

@@ -17,11 +17,12 @@ const Categories = () => {
 
     return (
         <>
+        
             <div className="categories">
-
+                <br />
                 {categories.map(x =>
 
-                    <article className="category">
+                    <article key={x._id} className="category">
                         <Link to={x._id}>
                             <p className="info">{x.bookGenre}</p>
                         </Link>
@@ -29,7 +30,8 @@ const Categories = () => {
                 )}
 
             </div>
-            <img src='cover.jpg' />
+            <img className='bnrCover' src='cover2.jpg' />
+           
         </>
     )
 

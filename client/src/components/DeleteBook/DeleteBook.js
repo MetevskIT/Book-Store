@@ -1,22 +1,22 @@
 import { useEffect, useContext } from 'react';
 
 import { useNavigate, useParams } from 'react-router-dom';
-import userService from '../../services/userService'
+import bookService from '../../services/bookService'
 import { AuthContext } from '../../contexts/AuthContext';
 
-const AddToCart = () => {
+const DeleteBook = () => {
     const navigate = useNavigate();
     const params = useParams('id')
 
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        if (!user.email) {
-            navigate('/login');
+        if (user.role != "Admin") {
+            navigate('/unauthorize');
         }
         else {
-            userService.addToCart(params.id, user.accessToken)
-            navigate('/cart');
+            bookService.deleteBook(params.id)
+            navigate('/categories')
         }
 
     });
@@ -24,4 +24,4 @@ const AddToCart = () => {
     return null;
 }
 
-export default AddToCart;
+export default DeleteBook;

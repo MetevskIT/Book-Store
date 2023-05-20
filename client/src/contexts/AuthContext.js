@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import userService from '../services/userService'
 
 export const AuthContext = createContext();
 
@@ -11,7 +12,7 @@ export const AuthProvider = ({
     const userLogin = (authData) => {
         setAuth(authData);
     };
-
+      
     const userLogout = () => {
         setAuth({});
     };
@@ -21,7 +22,8 @@ export const AuthProvider = ({
             user: auth,
             userLogin,
             userLogout,
-            isAuthenticated: !!auth.accessToken
+            isAuthenticated: !!auth.accessToken,
+            isAdmin:!!auth.role=="Admin"
         }}>
             {children}
         </AuthContext.Provider>  

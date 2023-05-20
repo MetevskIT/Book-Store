@@ -43,6 +43,32 @@ async function createBook(title, price, description, genre,imageUrl,token) {
 
     return result;
 }
+async function editBook(id,title,price,description,genre,imageUrl){
+
+    const request = await fetch(`${baseUrl}/admin/editBook/${id}`,{
+        method:"POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title, price, description, genre, imageUrl })
+    });
+    const result = await request.json();
+
+    return result;
+}
+
+async function deleteBook(id) {
+
+    const request = await fetch(`${baseUrl}/admin/deleteBook/${id}`,{
+        method:"POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    const result = await request.json();
+
+    return result;
+}
 
 
 
@@ -52,5 +78,7 @@ module.exports={
     getCategories,
     getBooksByCategories,
     getBookDetails,
-    createBook
+    createBook,
+    deleteBook,
+    editBook
 }

@@ -14,6 +14,11 @@ import AddToCart from './components/AddToCart/AddToCart';
 import Cart from './components/Cart/Cart';
 import RemoveFromCart from './components/RemoveFromCart/RemoveFromCart';
 import CreateBook from './components/CreateBook/CreateBook';
+import Unauthorize from './components/Unauthorize/Unauthorize';
+import DeleteBook from './components/DeleteBook/DeleteBook';
+import EditBook from './components/EditBook/EditBook';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -33,6 +38,11 @@ function App() {
           <Route path='/removeFromCart/:id' element={<RemoveFromCart/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/createBook' element={<CreateBook/>}/>
+          <Route path='/deleteBook/:id' element={<DeleteBook/>}/>
+          <Route path='/editBook/:id' element={<EditBook/>}/>
+          <Route path='/unauthorize' element={<Unauthorize/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/contact' element={<Contact/>}/>
         </Routes>
       </main>
       <Footer />

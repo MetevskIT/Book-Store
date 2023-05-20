@@ -8,9 +8,8 @@ async function createBook(model) {
             price: model.price,
             description: model.description,
             genre: model.genre,
-            imageUrls: model.imageUrl,
+            imageUrl: model.imageUrl,
         });
-        console.log(model);
         book.save();
         return book;
     } catch (error) {
@@ -25,7 +24,7 @@ async function editBook(bookId, model) {
             price: model.price,
             description: model.description,
             genre: model.genre,
-            imageUrls: model.imageUrls,
+            imageUrl: model.imageUrl,
         }
         return await Book.findByIdAndUpdate(bookId, book);
     } catch (error) {

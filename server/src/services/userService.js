@@ -48,6 +48,14 @@ async function findUserByIdAsync(id) {
     return user;
 }
 
+async function checkRole(id) {
+    const user = await User.findById(id)
+    if (!user) {
+        throw new Error("User dont exist!");
+    }
+    return user.role;
+}
+
 async function addToCart(userId, bookId) {
 
     try {
@@ -102,7 +110,8 @@ function createSession(user) {
     return {
         id: user._id,
         email: user.email,
-        accessToken
+        accessToken,
+        role:user.role
     }
 }
 

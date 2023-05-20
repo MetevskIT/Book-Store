@@ -39,6 +39,7 @@ async function addToCart(id, token) {
     return result;
 }
 
+
 async function removeFromCart(id, token) {
 
     const request = await fetch(`${baseUrl}/user/removeFromCart/${id}`, {
@@ -69,5 +70,5 @@ module.exports = {
     register,
     addToCart,
     getBooksFromCart,
-    removeFromCart
+    removeFromCart,
 }
