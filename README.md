@@ -1,9 +1,9 @@
 
-## Project Overview
+## 🌐 Project Overview
 
 The Online Bookstore is a comprehensive web application designed to offer users a seamless experience in exploring, reading, and managing their preferred books. This platform allows users to browse an extensive catalog, engage in a variety of book-related activities, and enables administrative functionalities for efficient management.
 
-## Features
+## 🚀 Features
 
 - **User Authentication:** Secure account creation, login, and personalized user experiences.
 - **Book Catalog:** Explore a diverse collection of books, including details such as title, author, and genre.
@@ -21,7 +21,7 @@ The Online Bookstore is a comprehensive web application designed to offer users 
   - Certain actions, such as administrative functions, are restricted to authorized users.
   - Non-authenticated users can still browse and read books.
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - **Frontend:**
   - React.js: Powering a dynamic and responsive user interface.
