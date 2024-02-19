@@ -34,3 +34,11 @@ The Online Bookstore is a comprehensive web application designed to offer users 
   - JWT (JSON Web Tokens): Ensuring secure user authentication.
 - **Additional Technologies:**
   - CSS: Styling for an aesthetically pleasing user interface.
+
+ ## :warning: License
+
+Distributed under the no License. See LICENSE.txt for more information.
+
+## :handshake: Contact
+
+Abdullah Metevski - metevskit@gmail.com
